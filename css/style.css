@@ -1,0 +1,103 @@
+.body {
+  font-family: sans-serif;
+}
+
+.selection-title {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 50px auto 40px auto;
+  font-size: 13px;
+  color: #777;
+  width: 507px;
+}
+
+.selection-title__style {
+  display: block;
+  font-size: 1.8em;
+  margin-top: 10px;
+  letter-spacing: 8px;
+  color: black;
+}
+
+.products {
+  border: 1px solid #aaa;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  padding: 8px;
+  border: 1px solid white;
+  margin: 10px;
+  position: relative;
+}
+
+.product:hover {
+  box-shadow: 1px 1px 14px -1px rgba(0, 0, 0, 0.2);
+}
+
+.product__image {
+  /* Je force l'image à ne jamais dépasser du cadre de son container. */
+  max-width: 100%;
+}
+
+.product__name {
+  text-transform: uppercase;
+  color: #5d5d5d;
+}
+
+.product__brand {
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: #eb1225;
+  color: white;
+  padding: 5px 10px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.product__price {
+  font-weight: bold;
+}
+
+.fixed-sales {
+  /* Je fixe le sens d'écriture du haut vers le bas. */
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+  color: #FFF;
+  text-transform: uppercase;
+  background: red;
+  padding: 1rem .5rem;
+  /* La propriété border-radius peut prendre 4 valeurs dans cet ordre : coin supérieur gauche, supérieur droit, inférieur droit et inférieur gauche. */
+  border-radius: 0 10px 10px 0;
+  /* On fixe notre étiquette soldes avec position: fixed. */
+  position: fixed;
+  left: 0;
+  /* Comme la propriété Top se base le coin supérieur gauche de l'élément à bouger, cet élément ne peut être parfaitement centré (c'est son coin qui sera à 50% de la hauteur de la page). Je viens donc retirer la moitié de la hauteur de l'élément pour compenser. */
+  height: 140px;
+  top: calc( 50% - 70px );
+}
+
+/* Pour afficher les pastilles, je force une dimension à notre bloc puis un border-radius de 50% pour l'arrondir. Enfin, avec position: absolute, je peux le placer à 0px du haut et de la droite de son parent. Il ne faut pas oublier de positionner celui-ci avec position: relative. */
+.product__sales {
+  width: 70px;
+  height: 70px;
+  background: #000;
+  border: 6px solid grey;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
